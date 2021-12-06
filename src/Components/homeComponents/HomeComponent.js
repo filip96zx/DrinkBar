@@ -9,6 +9,13 @@ const HomeComponent = () => {
   const [loading, setLoading] = useState(false);
   const [download, setDownload] = useState(false); 
 
+
+  useEffect(()=>{
+    if(window.innerWidth >1500){
+      setDrinksCount(30);
+    }
+  },[]);
+
   useEffect(() => {
     let drinkList = [...drinks];
     setLoading(true);

@@ -10,7 +10,6 @@ function App() {
   return (
     <>
       <Navbar/>
-
       <ContainerStyled bg={background}>
       {/* <img className='background-img' src={background} alt="" /> */}
       <div className="background-img"><div></div></div>

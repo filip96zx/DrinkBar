@@ -14,7 +14,7 @@ const TileComponent = ({ drink }) => {
   return (
     <Tile>
       <img src={strDrinkThumb} alt='' loading='lazy' />
-      <div className='content'></div>
+      <div className='shadow-box'></div>
       <div className='drink-info'>
         <h3>{drink.strDrink}</h3>
         <ul>{ingredients}</ul>
