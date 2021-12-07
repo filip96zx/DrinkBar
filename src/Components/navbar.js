@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import NabarStyled, { MenuButton, StyledLink } from './navbar.style';
+import Search from './search/Search';
 
-const Navbar = () => {
+const Navbar = ({ingredients, setDrinksIdsList}) => {
   const [showItems, setShowItems] = useState(false);
   const [hide, setHide] = useState(false);
   const [hideDelay, setHideDelay] = useState(false);
@@ -61,12 +62,13 @@ const Navbar = () => {
 
   return (
     <NabarStyled>
-      {showMenuButton && <MenuButton onClick={() => handleMenuButton()}>{menuIcon('icon menu', 'icon cross')}</MenuButton>}
+      <Search ingredients={ingredients} setDrinksIdsList={setDrinksIdsList}></Search>
+      {/* {showMenuButton && <MenuButton onClick={() => handleMenuButton()}>{menuIcon('icon menu', 'icon cross')}</MenuButton>}
       {menuIcon('icon menu onbar', 'icon cross onbar')}
       <nav className='row-menu'>{menu}</nav>
       <div className='bar'></div>
       {showItems && !showMenuButton && <nav className={hide ? 'column-menu hide' : 'column-menu show'}>{menu}</nav>}
-      {showItems && showMenuButton && <nav className={hide ? 'column-menu hide fixed' : 'column-menu show fixed'}>{menu}</nav>}
+      {showItems && showMenuButton && <nav className={hide ? 'column-menu hide fixed' : 'column-menu show fixed'}>{menu}</nav>} */}
     </NabarStyled>
   );
 };
