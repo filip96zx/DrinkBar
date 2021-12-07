@@ -1,25 +1,27 @@
 {
   "files": {
     "main.css": "/DrinkBar/static/css/main.7ef563af.chunk.css",
-    "main.js": "/DrinkBar/static/js/main.7d8c4181.chunk.js",
-    "main.js.map": "/DrinkBar/static/js/main.7d8c4181.chunk.js.map",
-    "runtime-main.js": "/DrinkBar/static/js/runtime-main.1f5ab9e9.js",
-    "runtime-main.js.map": "/DrinkBar/static/js/runtime-main.1f5ab9e9.js.map",
-    "static/js/2.0d4ab9d3.chunk.js": "/DrinkBar/static/js/2.0d4ab9d3.chunk.js",
-    "static/js/2.0d4ab9d3.chunk.js.map": "/DrinkBar/static/js/2.0d4ab9d3.chunk.js.map",
-    "static/js/3.53364058.chunk.js": "/DrinkBar/static/js/3.53364058.chunk.js",
-    "static/js/3.53364058.chunk.js.map": "/DrinkBar/static/js/3.53364058.chunk.js.map",
+    "main.js": "/DrinkBar/static/js/main.b0177565.chunk.js",
+    "main.js.map": "/DrinkBar/static/js/main.b0177565.chunk.js.map",
+    "runtime-main.js": "/DrinkBar/static/js/runtime-main.a6bd5c56.js",
+    "runtime-main.js.map": "/DrinkBar/static/js/runtime-main.a6bd5c56.js.map",
+    "static/js/2.5a3dc4e0.chunk.js": "/DrinkBar/static/js/2.5a3dc4e0.chunk.js",
+    "static/js/2.5a3dc4e0.chunk.js.map": "/DrinkBar/static/js/2.5a3dc4e0.chunk.js.map",
+    "static/js/3.f9672266.chunk.js": "/DrinkBar/static/js/3.f9672266.chunk.js",
+    "static/js/3.f9672266.chunk.js.map": "/DrinkBar/static/js/3.f9672266.chunk.js.map",
     "index.html": "/DrinkBar/index.html",
-    "precache-manifest.3006652aaabd3469c43eff458254de8a.js": "/DrinkBar/precache-manifest.3006652aaabd3469c43eff458254de8a.js",
+    "precache-manifest.b2d739589c23485a8c96136428a52f03.js": "/DrinkBar/precache-manifest.b2d739589c23485a8c96136428a52f03.js",
     "service-worker.js": "/DrinkBar/service-worker.js",
     "static/css/main.7ef563af.chunk.css.map": "/DrinkBar/static/css/main.7ef563af.chunk.css.map",
-    "static/js/2.0d4ab9d3.chunk.js.LICENSE.txt": "/DrinkBar/static/js/2.0d4ab9d3.chunk.js.LICENSE.txt",
-    "static/media/background6kx8k.jpg": "/DrinkBar/static/media/background6kx8k.f77aba2d.jpg"
+    "static/js/2.5a3dc4e0.chunk.js.LICENSE.txt": "/DrinkBar/static/js/2.5a3dc4e0.chunk.js.LICENSE.txt",
+    "static/media/background0.7x1k.jpg": "/DrinkBar/static/media/background0.7x1k.b81f6816.jpg",
+    "static/media/background6kx8k.jpg": "/DrinkBar/static/media/background6kx8k.f77aba2d.jpg",
+    "static/media/search_black_24dp.svg": "/DrinkBar/static/media/search_black_24dp.2461e0fe.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1f5ab9e9.js",
-    "static/js/2.0d4ab9d3.chunk.js",
+    "static/js/runtime-main.a6bd5c56.js",
+    "static/js/2.5a3dc4e0.chunk.js",
     "static/css/main.7ef563af.chunk.css",
-    "static/js/main.7d8c4181.chunk.js"
+    "static/js/main.b0177565.chunk.js"
   ]
 }
