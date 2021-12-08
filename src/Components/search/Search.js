@@ -76,7 +76,10 @@ const Search = ({ setDrinksIdsList }) => {
 
   const handleIngredientSubmit = (e) => {
     e.preventDefault();
-    const searchIngredient = ingredients.find((el) => el.toLowerCase().includes(ingredientInput.toLowerCase()));
+    let searchIngredient = ingredients.find((el) => el.toLowerCase().includes(ingredientInput.toLowerCase()));
+   
+    if(!searchIngredient) searchIngredient='';
+    
     setIngredientInput(searchIngredient);
     if (ingredientInput === '') {
       setDrinksIdsList([]);
