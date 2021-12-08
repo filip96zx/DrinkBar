@@ -1,27 +1,29 @@
 {
   "files": {
     "main.css": "/DrinkBar/static/css/main.7ef563af.chunk.css",
-    "main.js": "/DrinkBar/static/js/main.df5e15a9.chunk.js",
-    "main.js.map": "/DrinkBar/static/js/main.df5e15a9.chunk.js.map",
-    "runtime-main.js": "/DrinkBar/static/js/runtime-main.a6bd5c56.js",
-    "runtime-main.js.map": "/DrinkBar/static/js/runtime-main.a6bd5c56.js.map",
-    "static/js/2.5a3dc4e0.chunk.js": "/DrinkBar/static/js/2.5a3dc4e0.chunk.js",
-    "static/js/2.5a3dc4e0.chunk.js.map": "/DrinkBar/static/js/2.5a3dc4e0.chunk.js.map",
-    "static/js/3.f9672266.chunk.js": "/DrinkBar/static/js/3.f9672266.chunk.js",
-    "static/js/3.f9672266.chunk.js.map": "/DrinkBar/static/js/3.f9672266.chunk.js.map",
+    "main.js": "/DrinkBar/static/js/main.c68d0794.chunk.js",
+    "main.js.map": "/DrinkBar/static/js/main.c68d0794.chunk.js.map",
+    "runtime-main.js": "/DrinkBar/static/js/runtime-main.964ab49d.js",
+    "runtime-main.js.map": "/DrinkBar/static/js/runtime-main.964ab49d.js.map",
+    "static/js/2.5bb46e4f.chunk.js": "/DrinkBar/static/js/2.5bb46e4f.chunk.js",
+    "static/js/2.5bb46e4f.chunk.js.map": "/DrinkBar/static/js/2.5bb46e4f.chunk.js.map",
+    "static/js/3.a76f2cb0.chunk.js": "/DrinkBar/static/js/3.a76f2cb0.chunk.js",
+    "static/js/3.a76f2cb0.chunk.js.map": "/DrinkBar/static/js/3.a76f2cb0.chunk.js.map",
     "index.html": "/DrinkBar/index.html",
-    "precache-manifest.2291e02966abd7312a1306cdc92254c7.js": "/DrinkBar/precache-manifest.2291e02966abd7312a1306cdc92254c7.js",
+    "precache-manifest.924c2c751eaa0b58e968239482c057af.js": "/DrinkBar/precache-manifest.924c2c751eaa0b58e968239482c057af.js",
     "service-worker.js": "/DrinkBar/service-worker.js",
     "static/css/main.7ef563af.chunk.css.map": "/DrinkBar/static/css/main.7ef563af.chunk.css.map",
-    "static/js/2.5a3dc4e0.chunk.js.LICENSE.txt": "/DrinkBar/static/js/2.5a3dc4e0.chunk.js.LICENSE.txt",
+    "static/js/2.5bb46e4f.chunk.js.LICENSE.txt": "/DrinkBar/static/js/2.5bb46e4f.chunk.js.LICENSE.txt",
     "static/media/background0.7x1k.jpg": "/DrinkBar/static/media/background0.7x1k.b81f6816.jpg",
+    "static/media/background1,5kx2k.jpg": "/DrinkBar/static/media/background1,5kx2k.e2e9a899.jpg",
+    "static/media/background3kx4k.jpg": "/DrinkBar/static/media/background3kx4k.034fd658.jpg",
     "static/media/background6kx8k.jpg": "/DrinkBar/static/media/background6kx8k.f77aba2d.jpg",
     "static/media/search_black_24dp.svg": "/DrinkBar/static/media/search_black_24dp.2461e0fe.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a6bd5c56.js",
-    "static/js/2.5a3dc4e0.chunk.js",
+    "static/js/runtime-main.964ab49d.js",
+    "static/js/2.5bb46e4f.chunk.js",
     "static/css/main.7ef563af.chunk.css",
-    "static/js/main.df5e15a9.chunk.js"
+    "static/js/main.c68d0794.chunk.js"
   ]
 }
