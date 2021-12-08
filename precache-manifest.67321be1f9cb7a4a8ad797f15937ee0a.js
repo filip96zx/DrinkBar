@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fa6d8e07ef7e083e091d657fb978ffb1",
+    "revision": "1afec44dab3c3463001b9fffec0a8509",
     "url": "/DrinkBar/index.html"
   },
   {
-    "revision": "bca27161cc3d9faec8b5",
+    "revision": "6f850e9d890ad6ca05e4",
     "url": "/DrinkBar/static/css/main.7ef563af.chunk.css"
   },
   {
@@ -16,16 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DrinkBar/static/js/2.5bb46e4f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fe1a74118c6432bef94f",
-    "url": "/DrinkBar/static/js/3.a76f2cb0.chunk.js"
+    "revision": "6f850e9d890ad6ca05e4",
+    "url": "/DrinkBar/static/js/main.d170f79f.chunk.js"
   },
   {
-    "revision": "bca27161cc3d9faec8b5",
-    "url": "/DrinkBar/static/js/main.c68d0794.chunk.js"
-  },
-  {
-    "revision": "3701863a7062f5a05a93",
-    "url": "/DrinkBar/static/js/runtime-main.964ab49d.js"
+    "revision": "7d1e85fb9cd22af2c096",
+    "url": "/DrinkBar/static/js/runtime-main.2a0f1d78.js"
   },
   {
     "revision": "b81f68161d9700c660e3dc110d2ad879",
