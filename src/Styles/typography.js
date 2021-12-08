@@ -1,6 +1,6 @@
 const typography = {
   mainColor: 'black',
-  borderColor: 'gray',
+  secondaryColor: 'rgb(100,100,100)',
   fontColor: 'white',
 };
 

@@ -132,14 +132,12 @@ const Search = ({ setDrinksIdsList }) => {
       scrollCount = 0;
     }
     if (scrollCurrent + 100 < scrollBefore && !scrollShow) {
-      //console.log('pokazuje butttona');
       setShowSearchButton(true);
       scrollStart = scrollCurrent;
       scrollBefore = 0;
       scrollShow = true;
     }
     if (scrollStart + 100 < scrollCurrent && scrollShow) {
-      //console.log('chowam');
       setShowSearchButton(false);
       setShowSearch(false);
       scrollShow = false;

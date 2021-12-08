@@ -28,9 +28,6 @@ const SearchStyled = styled.div`
     width: 100%;
     @media(max-width:520px){
         margin-bottom: 30px;
-        /* input{
-        width: 80%;
-        } */
       }
   }
   form {
@@ -43,9 +40,6 @@ const SearchStyled = styled.div`
       text-align: center;
       @media(max-width:520px){
         text-align: left;
-        /* input{
-        width: 80%;
-        } */
       }
       @media(max-width:850px){
       
@@ -83,7 +77,7 @@ const SearchStyled = styled.div`
     padding: 2px;
     text-align: left;
     &:nth-of-type(1){
-      background: darkgray;
+      background: ${typography.secondaryColor};
     }
     background: ${typography.mainColor};
     color:${typography.fontColor};
@@ -91,11 +85,7 @@ const SearchStyled = styled.div`
       font-weight: 900;
     }
     &:hover{
-      background: darkgray !important;
-    }
-    &:focus{
-      background: darkgray;
-      outline: none;
+      background: ${typography.secondaryColor} !important;
     }
   }
   
@@ -110,7 +100,7 @@ export const SearchButtonStyled = styled.button`
   //outline: none;
   transform: translateY(-200%);
   transition: 1s;
-  border: 3px solid ${typography.borderColor};
+  border: 3px solid ${typography.secondaryColor};
   box-shadow: 2px 2px 3px 0px ${typography.mainColor};
   width: 50px;
   height: 50px;

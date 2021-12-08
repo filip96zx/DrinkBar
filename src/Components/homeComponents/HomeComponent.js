@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import DrinkService from '../../Services/DrinkService';
 import HomeStyled from './Home.style';
-import { WaitingTile } from './tile/Tile.style';
-import TileComponent from './tile/TileComponent';
+import { WaitingTile } from '../tile/Tile.style';
+import TileComponent from '../tile/TileComponent';
+import FavouriteService from '../../Services/FavouriteService';
 
 const HomeComponent = ({ drinksIdsList }) => {
   const [drinks, setDrinks] = useState([]);
-  const [drinksCount, setDrinksCount] = useState(10);
+  const [drinksCount, setDrinksCount] = useState(12);
   const [loading, setLoading] = useState(false);
   const [download, setDownload] = useState(true);
   const [drinksIds, setDrinksIds] = useState([]);
@@ -16,6 +17,11 @@ const HomeComponent = ({ drinksIdsList }) => {
   const [WaitingTiles, setWaitingTiles] = useState([]);
 
 
+  useEffect(() => {
+    if (window.innerWidth > 1500) {
+      setDrinksCount(30);
+    }
+  }, []);
 
   useEffect(() => {
     const totalCount = drinksIdsList.length;
@@ -38,16 +44,11 @@ const HomeComponent = ({ drinksIdsList }) => {
     if (window.innerWidth > 1500) {
       setDrinksCount(30);
     } else {
-      setDrinksCount(10);
+      setDrinksCount(12);
     }
     setWaitingTiles(WaitingTilesList);
   }, [drinksIdsList]);
 
-  useEffect(() => {
-    if (window.innerWidth > 1500) {
-      setDrinksCount(30);
-    }
-  }, []);
 
   useEffect(() => {
     let drinkList = [...drinks];
@@ -119,7 +120,7 @@ const HomeComponent = ({ drinksIdsList }) => {
   return (
     <HomeStyled>
     {drinks.length > 0 && drinks}
-    {drinks.length === 0 &&WaitingTiles}
+    {drinks.length === 0 && WaitingTiles}
     </HomeStyled>
     );
 };

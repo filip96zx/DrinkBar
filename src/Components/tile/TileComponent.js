@@ -13,7 +13,7 @@ const TileComponent = ({ drink }) => {
 
   return (
     <Tile>
-      <img src={strDrinkThumb} alt='' loading='lazy' />
+      <img src={strDrinkThumb} alt='Drink photo' loading='lazy' />
       <div className='shadow-box'></div>
       <div className="info-background"></div>
       <div className='drink-info'>
