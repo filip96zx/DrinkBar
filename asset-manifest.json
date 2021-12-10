@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/DrinkBar/static/css/main.7ef563af.chunk.css",
-    "main.js": "/DrinkBar/static/js/main.eddd4c9e.chunk.js",
-    "main.js.map": "/DrinkBar/static/js/main.eddd4c9e.chunk.js.map",
+    "main.js": "/DrinkBar/static/js/main.cd60e94f.chunk.js",
+    "main.js.map": "/DrinkBar/static/js/main.cd60e94f.chunk.js.map",
     "runtime-main.js": "/DrinkBar/static/js/runtime-main.2a0f1d78.js",
     "runtime-main.js.map": "/DrinkBar/static/js/runtime-main.2a0f1d78.js.map",
     "static/js/2.439914b2.chunk.js": "/DrinkBar/static/js/2.439914b2.chunk.js",
     "static/js/2.439914b2.chunk.js.map": "/DrinkBar/static/js/2.439914b2.chunk.js.map",
     "index.html": "/DrinkBar/index.html",
-    "precache-manifest.11b737c9ce34c9157808ff3d8256dc5e.js": "/DrinkBar/precache-manifest.11b737c9ce34c9157808ff3d8256dc5e.js",
+    "precache-manifest.8269cdca2d89518cd4312a5170210cf9.js": "/DrinkBar/precache-manifest.8269cdca2d89518cd4312a5170210cf9.js",
     "service-worker.js": "/DrinkBar/service-worker.js",
     "static/css/main.7ef563af.chunk.css.map": "/DrinkBar/static/css/main.7ef563af.chunk.css.map",
     "static/js/2.439914b2.chunk.js.LICENSE.txt": "/DrinkBar/static/js/2.439914b2.chunk.js.LICENSE.txt",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.2a0f1d78.js",
     "static/js/2.439914b2.chunk.js",
     "static/css/main.7ef563af.chunk.css",
-    "static/js/main.eddd4c9e.chunk.js"
+    "static/js/main.cd60e94f.chunk.js"
   ]
 }
