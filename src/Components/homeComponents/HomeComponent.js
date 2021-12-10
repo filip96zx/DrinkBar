@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import DrinkService from '../../Services/DrinkService';
-import HomeStyled from './Home.style';
+import HomeStyled, {NavbarSpace} from './HomeComponent.style';
 import { WaitingTile } from '../tile/Tile.style';
 import TileComponent from '../tile/TileComponent';
-import FavouriteService from '../../Services/FavouriteService';
 
-const HomeComponent = ({ drinksIdsList }) => {
+const HomeComponent = ({ drinksIdsList, handleShowMenuButton }) => {
   const [drinks, setDrinks] = useState([]);
   const [drinksCount, setDrinksCount] = useState(12);
   const [loading, setLoading] = useState(false);
@@ -15,6 +14,7 @@ const HomeComponent = ({ drinksIdsList }) => {
   const [filtered, setFiltered] = useState(false);
 
   const [WaitingTiles, setWaitingTiles] = useState([]);
+  const homeRef = useRef(null);
 
 
   useEffect(() => {
@@ -33,12 +33,12 @@ const HomeComponent = ({ drinksIdsList }) => {
     if(totalCount > 0) {
       setFiltered(true);
       for (let i = 0; i < drinksCount && i < totalCount; i++){
-        WaitingTilesList.push(<WaitingTile key={i}></WaitingTile>)
+        WaitingTilesList.push(<WaitingTile key={i}><div></div></WaitingTile>)
       }
     } else {
       setFiltered(false);
       for (let i = 0; i < drinksCount; i++){
-        WaitingTilesList.push(<WaitingTile key={i}></WaitingTile>)
+        WaitingTilesList.push(<WaitingTile key={i}><div></div></WaitingTile>)
       }
     }
     if (window.innerWidth > 1500) {
@@ -80,11 +80,13 @@ const HomeComponent = ({ drinksIdsList }) => {
   }, [drinks, drinksCount]);
 
   useEffect(() => {
-    window.addEventListener('scroll', increaseDrinksCount);
+    homeRef.current.addEventListener('scroll', increaseDrinksCount);
+    homeRef.current.addEventListener('scroll', handleShowMenuButton);
     return () => {
-      window.removeEventListener('scroll', increaseDrinksCount);
+      homeRef.current.removeEventListener('scroll', increaseDrinksCount);
+      homeRef.current.removeEventListener('scroll', handleShowMenuButton);
     };
-  }, []);
+  }, [homeRef]);
 
   useEffect(() => {
     if (download) {
@@ -94,7 +96,7 @@ const HomeComponent = ({ drinksIdsList }) => {
   }, [download]);
 
   const increaseDrinksCount = () => {
-    if (document.body.offsetHeight - window.scrollY < window.innerHeight * 3 && !loading) {
+    if (homeRef.current.scrollHeight - homeRef.current.scrollTop < window.innerHeight * 3 && !loading) {
       setDownload(true);
     }
   };
@@ -118,7 +120,8 @@ const HomeComponent = ({ drinksIdsList }) => {
   };
 
   return (
-    <HomeStyled>
+    <HomeStyled ref={homeRef}>
+      <NavbarSpace/>
     {drinks.length > 0 && drinks}
     {drinks.length === 0 && WaitingTiles}
     </HomeStyled>

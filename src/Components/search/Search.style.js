@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import typography from "../../Styles/typography";
-import searchIcon from "../../Assets/search_black_24dp.svg";
 
 
 const SearchStyled = styled.div`
@@ -95,9 +94,8 @@ export const SearchButtonStyled = styled.button`
   position: fixed;
   top: 10px;
   right: 10px;
-  background: url(${searchIcon}),${typography.mainColor};
+  background: ${typography.mainColor};
   background-size: 50px;
-  //outline: none;
   transform: translateY(-200%);
   transition: 1s;
   border: 3px solid ${typography.secondaryColor};
@@ -110,6 +108,8 @@ export const SearchButtonStyled = styled.button`
     transform: translateY(0%);
   }
 `;
+
+
 
 
 export default SearchStyled;

@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import DrinkService from '../../Services/DrinkService';
+import FavouriteService from '../../Services/FavouriteService';
+import MenuIcon from './MenuButton.style';
 import SearchStyled, { SearchButtonStyled } from './Search.style';
 
-let scrollShow = true;
-let scrollCount = 0;
-let scrollStart = 0;
-let scrollBefore = 0; 
-let scrollCurrent = 0;
 
-const Search = ({ setDrinksIdsList }) => {
+
+const Search = ({ setDrinksIdsList, showSearchButton, showSearch, setShowSearch }) => {
   const [hint, setHint] = useState([]);
   const [ingredientInput, setIngredientInput] = useState('');
   const [nameInput, setNameInput] = useState('');
   const [idsToLoad, setIdsToLoad] = useState([]);
   const [ingredients, setIngredients] = useState([]);
-  const [showSearch, setShowSearch] = useState(false);
-  const [showSearchButton, setShowSearchButton] = useState(true);
+
+
+  const [showLikedList, setShowLikedList] = useState(false);
 
   useEffect(() => {
     const list = [];
@@ -26,15 +25,17 @@ const Search = ({ setDrinksIdsList }) => {
   }, []);
 
   useEffect(() => {
-    if (idsToLoad.length > 0) setDrinksIdsList(idsToLoad);
+    if (idsToLoad.length > 0 ) {
+      setDrinksIdsList(idsToLoad);
+      setShowLikedList(false);
+    };
   }, [idsToLoad]);
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleShowSearchButton);
-    return () => {
-      window.removeEventListener('scroll', handleShowSearchButton);
-    };
-  }, []);
+  useEffect(() =>{
+    if(showLikedList) setDrinksIdsList(FavouriteService.favouriteDrinksList());
+  },[showLikedList]);
+
+
 
   const handleChangeName = (e) => {
     setNameInput(e.target.value);
@@ -74,6 +75,8 @@ const Search = ({ setDrinksIdsList }) => {
     setHint([]);
   };
 
+
+
   const handleIngredientSubmit = (e) => {
     e.preventDefault();
     let searchIngredient = ingredients.find((el) => el.toLowerCase().includes(ingredientInput.toLowerCase()));
@@ -83,6 +86,7 @@ const Search = ({ setDrinksIdsList }) => {
     setIngredientInput(searchIngredient);
     if (ingredientInput === '') {
       setDrinksIdsList([]);
+      setShowLikedList(false);
       setIngredientInput('');
       return;
     }
@@ -94,7 +98,10 @@ const Search = ({ setDrinksIdsList }) => {
   const handleNameSubmit = (e) => {
     e.preventDefault();
     setIngredientInput('');
-    if (nameInput === '') setDrinksIdsList([]);
+    if (nameInput === '') {
+      setDrinksIdsList([]);
+      setShowLikedList(false);
+    };
     getDrinksByName(nameInput);
   };
 
@@ -118,34 +125,31 @@ const Search = ({ setDrinksIdsList }) => {
       .catch((err) => err);
   };
 
+
+
   const handleShowSearch = () => {
     setShowSearch(!showSearch);
   };
 
 
-  const handleShowSearchButton = () => {
-    scrollCurrent = window.scrollY;
-    scrollCount++;
-    if (scrollCount > 10) {
-      scrollStart = scrollCurrent;
-      scrollBefore = scrollCurrent;
-    }
-    if (scrollBefore <= scrollCurrent) {
-      scrollBefore = scrollCurrent;
-      scrollCount = 0;
-    }
-    if (scrollCurrent + 100 < scrollBefore && !scrollShow) {
-      setShowSearchButton(true);
-      scrollStart = scrollCurrent;
-      scrollBefore = 0;
-      scrollShow = true;
-    }
-    if (scrollStart + 100 < scrollCurrent && scrollShow) {
-      setShowSearchButton(false);
-      setShowSearch(false);
-      scrollShow = false;
-    }
-  };
+  const likedListShow = () => {
+    setShowLikedList(true);
+  }
+  const likedListHide = () => {
+    setShowLikedList(false);
+    setDrinksIdsList([]);
+  }
+
+  
+  const menuIcon = (
+    <MenuIcon>
+    <svg  className={showSearch ? 'icon cross' : 'icon menu'} viewBox='0 0 100 80' width='30' height='30' fill='white'>
+      <rect id='rect-one' width='100' rx='9' height='20'></rect>
+      <rect id='rect-two' y='30' rx='9' width='100' height='20'></rect>
+      <rect id='rect-three' y='60' rx='9' width='100' height='20'></rect>
+    </svg>
+    </MenuIcon>
+  );
 
   return (
     <>
@@ -160,12 +164,16 @@ const Search = ({ setDrinksIdsList }) => {
         <form onSubmit={handleIngredientSubmit}>
           <div className='form-group'>
             <label htmlFor='ingredientInput'>Ingredient&nbsp;</label>
-            <input autoComplete='off' type='text' id='ingredientInput' value={ingredientInput} onChange={handleChangeIngredient} />
+            <input autoComplete='off' type='text' id='ingredientInput' value={ingredientInput} onChange={handleChangeIngredient} onBlur={()=> setHint([])}/>
             <div className='hints'>{hint}</div>
           </div>
         </form>
+        <button onClick={likedListShow}>favourites </button>
+        <button onClick={likedListHide}>all </button>
       </SearchStyled>
-      <SearchButtonStyled className={showSearchButton ? 'show' : null} onClick={handleShowSearch} />
+      <SearchButtonStyled className={showSearchButton ? 'show' : null} onClick={() => handleShowSearch()}>
+        {menuIcon}
+      </SearchButtonStyled>
     </>
   );
 };
