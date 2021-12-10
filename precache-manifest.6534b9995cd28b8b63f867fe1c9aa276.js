@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "20e03036e0648fa0b407ef4d37d2a470",
+    "revision": "2af757675a3857c12ed3f99bcafe601d",
     "url": "/DrinkBar/index.html"
   },
   {
-    "revision": "cc1b5435e01a6b65333d",
+    "revision": "0f7f26a0598f0631afc9",
     "url": "/DrinkBar/static/css/main.7ef563af.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DrinkBar/static/js/2.439914b2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cc1b5435e01a6b65333d",
-    "url": "/DrinkBar/static/js/main.63a25d21.chunk.js"
+    "revision": "0f7f26a0598f0631afc9",
+    "url": "/DrinkBar/static/js/main.93352ee4.chunk.js"
   },
   {
     "revision": "7d1e85fb9cd22af2c096",
