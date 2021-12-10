@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c1af7ee2c1ed88a43402b91ce93b102e",
+    "revision": "a6478c3e98ce99580c7797f95325f6b6",
     "url": "/DrinkBar/index.html"
   },
   {
-    "revision": "633db5c78e6fddacde4d",
+    "revision": "16a19c50aab897fba535",
     "url": "/DrinkBar/static/css/main.7ef563af.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DrinkBar/static/js/2.4d429c21.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "633db5c78e6fddacde4d",
-    "url": "/DrinkBar/static/js/main.9bc87c62.chunk.js"
+    "revision": "16a19c50aab897fba535",
+    "url": "/DrinkBar/static/js/main.25b1d2c3.chunk.js"
   },
   {
     "revision": "7d1e85fb9cd22af2c096",
@@ -38,9 +38,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f77aba2de4dd1e19b3e5e78e158e948c",
     "url": "/DrinkBar/static/media/background6kx8k.f77aba2d.jpg"
-  },
-  {
-    "revision": "2461e0fe1972d862bdd6e454ceb887e9",
-    "url": "/DrinkBar/static/media/search_black_24dp.2461e0fe.svg"
   }
 ]);
