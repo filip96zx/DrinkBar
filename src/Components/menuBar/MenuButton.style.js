@@ -33,6 +33,7 @@ const MenuIcon = styled.div`
   overflow: visible;
   padding: 0 7px;
   transition: 0.2s;
+  -webkit-tap-highlight-color: transparent;
   &:hover {
     cursor: pointer;
     transform: scale(1.1);

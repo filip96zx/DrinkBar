@@ -2,7 +2,7 @@ import styled from "styled-components";
 import typography from "../../Styles/typography";
 
 
-const SearchStyled = styled.div`
+const MenuBarStyled = styled.div`
   position: fixed;
   top:0;
   transition:0.8s;
@@ -112,4 +112,4 @@ export const SearchButtonStyled = styled.button`
 
 
 
-export default SearchStyled;
+export default MenuBarStyled;

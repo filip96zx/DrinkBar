@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import ContainerStyled from './App.style';
 import HomeComponent from './Components/homeComponents/HomeComponent';
-import Search from './Components/search/Search';
+import MenuBar from './Components/menuBar/MenuBar';
 import BackgroundComponent from './Components/background/BackgroundComponent';
 
 
@@ -14,8 +14,8 @@ let scrollCurrent = 0;
 function App() {
 
   const [drinksIdsList, setDrinksIdsList] = useState([]);
-  const [showSearchButton, setShowSearchButton] = useState(true);
-  const [showSearch, setShowSearch] = useState(false);
+  const [showMenuButton, setShowMenuButton] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
 
   
 
@@ -31,23 +31,23 @@ function App() {
       scrollCount = 0;
     }
     if (scrollCurrent + 100 < scrollBefore && !scrollShow) {
-      setShowSearchButton(true);
+      setShowMenuButton(true);
       scrollStart = scrollCurrent;
       scrollBefore = 0;
       scrollShow = true;
     }
     if (scrollStart + 100 < scrollCurrent && scrollShow) {
-      setShowSearchButton(false);
-      setShowSearch(false);
+      setShowMenuButton(false);
+      setShowMenu(false);
       scrollShow = false;
     }
-    if(scrollCurrent === 0) setShowSearchButton(true);
+    if(scrollCurrent === 0) setShowMenuButton(true);
   };
 
 
   return (
     <>
-      <Search showSearchButton={showSearchButton} showSearch={showSearch} setShowSearch={setShowSearch} setDrinksIdsList={setDrinksIdsList}></Search>
+      <MenuBar showMenuButton={showMenuButton} showMenu={showMenu} setShowMenu={setShowMenu} setDrinksIdsList={setDrinksIdsList}></MenuBar>
       <ContainerStyled>
         <BackgroundComponent/>
         <HomeComponent handleShowMenuButton={handleShowMenuButton} drinksIdsList={drinksIdsList}/>

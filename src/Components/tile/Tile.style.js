@@ -155,7 +155,7 @@ const Tile = styled.div`
       text-align: justify;
       padding-right: 2.5rem;
       margin-bottom: 3.7rem;
-      width: (100%- 22px);
+      width: calc(100%- 22px);
     }
   }
   button {
@@ -166,6 +166,7 @@ const Tile = styled.div`
     outline: none;
     padding: 15px;
     background-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
     cursor: pointer;
     transition: 0.2s;
     &:hover {

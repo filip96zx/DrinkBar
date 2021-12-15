@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import DrinkService from '../../Services/DrinkService';
 import FavouriteService from '../../Services/FavouriteService';
 import MenuIcon from './MenuButton.style';
-import SearchStyled, { SearchButtonStyled } from './Search.style';
+import MenuBarStyled, { SearchButtonStyled } from './MenuBar.style';
 
 
 
-const Search = ({ setDrinksIdsList, showSearchButton, showSearch, setShowSearch }) => {
+const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) => {
   const [hint, setHint] = useState([]);
   const [ingredientInput, setIngredientInput] = useState('');
   const [nameInput, setNameInput] = useState('');
@@ -32,7 +32,13 @@ const Search = ({ setDrinksIdsList, showSearchButton, showSearch, setShowSearch 
   }, [idsToLoad]);
 
   useEffect(() =>{
-    if(showLikedList) setDrinksIdsList(FavouriteService.favouriteDrinksList());
+    const likedList = FavouriteService.favouriteDrinksList();
+    if(showLikedList && likedList) {
+      setDrinksIdsList(likedList);
+    }
+    else {
+      setDrinksIdsList([]);
+    };
   },[showLikedList]);
 
 
@@ -127,8 +133,8 @@ const Search = ({ setDrinksIdsList, showSearchButton, showSearch, setShowSearch 
 
 
 
-  const handleShowSearch = () => {
-    setShowSearch(!showSearch);
+  const handleShowMenu = () => {
+    setShowMenu(!showMenu);
   };
 
 
@@ -143,7 +149,7 @@ const Search = ({ setDrinksIdsList, showSearchButton, showSearch, setShowSearch 
   
   const menuIcon = (
     <MenuIcon>
-    <svg  className={showSearch ? 'icon cross' : 'icon menu'} viewBox='0 0 100 80' width='30' height='30' fill='white'>
+    <svg  className={showMenu ? 'icon cross' : 'icon menu'} viewBox='0 0 100 80' width='30' height='30' fill='white'>
       <rect id='rect-one' width='100' rx='9' height='20'></rect>
       <rect id='rect-two' y='30' rx='9' width='100' height='20'></rect>
       <rect id='rect-three' y='60' rx='9' width='100' height='20'></rect>
@@ -153,7 +159,7 @@ const Search = ({ setDrinksIdsList, showSearchButton, showSearch, setShowSearch 
 
   return (
     <>
-      <SearchStyled className={showSearch ? 'show' : null}>
+      <MenuBarStyled className={showMenu ? 'show' : null}>
         <h2>Search</h2>
         <form onSubmit={handleNameSubmit}>
           <div className='form-group'>
@@ -170,12 +176,12 @@ const Search = ({ setDrinksIdsList, showSearchButton, showSearch, setShowSearch 
         </form>
         <button onClick={likedListShow}>favourites </button>
         <button onClick={likedListHide}>all </button>
-      </SearchStyled>
-      <SearchButtonStyled className={showSearchButton ? 'show' : null} onClick={() => handleShowSearch()}>
+      </MenuBarStyled>
+      <SearchButtonStyled className={showMenuButton ? 'show' : null} onClick={() => handleShowMenu()}>
         {menuIcon}
       </SearchButtonStyled>
     </>
   );
 };
 
-export default Search;
+export default MenuBar;
