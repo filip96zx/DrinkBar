@@ -3,6 +3,7 @@ import ContainerStyled from './App.style';
 import HomeComponent from './Components/homeComponents/HomeComponent';
 import MenuBar from './Components/menuBar/MenuBar';
 import BackgroundComponent from './Components/background/BackgroundComponent';
+import FavouriteCountContextProvider from './Context/FavouriteCountContext';
 
 
 let scrollShow = true;
@@ -16,6 +17,7 @@ function App() {
   const [drinksIdsList, setDrinksIdsList] = useState([]);
   const [showMenuButton, setShowMenuButton] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
+  
 
   
 
@@ -46,13 +48,13 @@ function App() {
 
 
   return (
-    <>
+    <FavouriteCountContextProvider>
       <MenuBar showMenuButton={showMenuButton} showMenu={showMenu} setShowMenu={setShowMenu} setDrinksIdsList={setDrinksIdsList}></MenuBar>
       <ContainerStyled>
         <BackgroundComponent/>
         <HomeComponent handleShowMenuButton={handleShowMenuButton} drinksIdsList={drinksIdsList}/>
       </ContainerStyled>
-    </>
+    </FavouriteCountContextProvider>
   );
 }
 

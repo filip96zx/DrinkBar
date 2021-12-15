@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import DrinkService from '../../Services/DrinkService';
 import FavouriteService from '../../Services/FavouriteService';
 import MenuIcon from './MenuButton.style';
 import MenuBarStyled, { SearchButtonStyled } from './MenuBar.style';
-
-
+import { FavouriteCountContext } from '../../Context/FavouriteCountContext';
 
 const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) => {
   const [hint, setHint] = useState([]);
@@ -12,9 +11,11 @@ const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) =>
   const [nameInput, setNameInput] = useState('');
   const [idsToLoad, setIdsToLoad] = useState([]);
   const [ingredients, setIngredients] = useState([]);
-
+  const CountContext = useContext(FavouriteCountContext);
 
   const [showLikedList, setShowLikedList] = useState(false);
+
+  useEffect(() => {});
 
   useEffect(() => {
     const list = [];
@@ -25,23 +26,20 @@ const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) =>
   }, []);
 
   useEffect(() => {
-    if (idsToLoad.length > 0 ) {
+    if (idsToLoad.length > 0) {
       setDrinksIdsList(idsToLoad);
       setShowLikedList(false);
-    };
+    }
   }, [idsToLoad]);
 
-  useEffect(() =>{
+  useEffect(() => {
     const likedList = FavouriteService.favouriteDrinksList();
-    if(showLikedList && likedList) {
+    if (showLikedList && likedList) {
       setDrinksIdsList(likedList);
-    }
-    else {
+    } else {
       setDrinksIdsList([]);
-    };
-  },[showLikedList]);
-
-
+    }
+  }, [showLikedList]);
 
   const handleChangeName = (e) => {
     setNameInput(e.target.value);
@@ -81,14 +79,12 @@ const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) =>
     setHint([]);
   };
 
-
-
   const handleIngredientSubmit = (e) => {
     e.preventDefault();
     let searchIngredient = ingredients.find((el) => el.toLowerCase().includes(ingredientInput.toLowerCase()));
-   
-    if(!searchIngredient) searchIngredient='';
-    
+
+    if (!searchIngredient) searchIngredient = '';
+
     setIngredientInput(searchIngredient);
     if (ingredientInput === '') {
       setDrinksIdsList([]);
@@ -107,7 +103,7 @@ const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) =>
     if (nameInput === '') {
       setDrinksIdsList([]);
       setShowLikedList(false);
-    };
+    }
     getDrinksByName(nameInput);
   };
 
@@ -131,29 +127,25 @@ const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) =>
       .catch((err) => err);
   };
 
-
-
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
   };
 
-
   const likedListShow = () => {
     setShowLikedList(true);
-  }
+  };
   const likedListHide = () => {
     setShowLikedList(false);
     setDrinksIdsList([]);
-  }
+  };
 
-  
   const menuIcon = (
     <MenuIcon>
-    <svg  className={showMenu ? 'icon cross' : 'icon menu'} viewBox='0 0 100 80' width='30' height='30' fill='white'>
-      <rect id='rect-one' width='100' rx='9' height='20'></rect>
-      <rect id='rect-two' y='30' rx='9' width='100' height='20'></rect>
-      <rect id='rect-three' y='60' rx='9' width='100' height='20'></rect>
-    </svg>
+      <svg className={showMenu ? 'icon cross' : 'icon menu'} viewBox='0 0 100 80' width='30' height='30' fill='white'>
+        <rect id='rect-one' width='100' rx='9' height='20'></rect>
+        <rect id='rect-two' y='30' rx='9' width='100' height='20'></rect>
+        <rect id='rect-three' y='60' rx='9' width='100' height='20'></rect>
+      </svg>
     </MenuIcon>
   );
 
@@ -170,12 +162,17 @@ const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) =>
         <form onSubmit={handleIngredientSubmit}>
           <div className='form-group'>
             <label htmlFor='ingredientInput'>Ingredient&nbsp;</label>
-            <input autoComplete='off' type='text' id='ingredientInput' value={ingredientInput} onChange={handleChangeIngredient} onBlur={()=> setHint([])}/>
+            <input autoComplete='off' type='text' id='ingredientInput' value={ingredientInput} onChange={handleChangeIngredient} onBlur={() => setHint([])} />
             <div className='hints'>{hint}</div>
           </div>
         </form>
-        <button onClick={likedListShow}>favourites </button>
-        <button onClick={likedListHide}>all </button>
+        {showLikedList ? (
+          <button onClick={likedListHide}>all </button>
+        ) : (
+          <button disabled={CountContext.count < 1} onClick={likedListShow}>
+            favourites ({CountContext.count})
+          </button>
+        )}
       </MenuBarStyled>
       <SearchButtonStyled className={showMenuButton ? 'show' : null} onClick={() => handleShowMenu()}>
         {menuIcon}

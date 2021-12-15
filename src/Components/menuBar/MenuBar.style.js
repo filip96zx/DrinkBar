@@ -28,6 +28,10 @@ const MenuBarStyled = styled.div`
     @media(max-width:520px){
         margin-bottom: 30px;
       }
+    &:after {
+      content:' (all)';
+      font-size:0.8rem;
+    }
   }
   form {
     margin-bottom: 5px;
@@ -87,7 +91,25 @@ const MenuBarStyled = styled.div`
       background: ${typography.secondaryColor} !important;
     }
   }
-  
+  button {
+    height: 1.7rem;
+    font-size:1.2rem;
+    padding: 0 5px;
+    width: 15ch;
+    outline: none;
+    border:none;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    -webkit-tap-highlight-color: transparent;
+    &:hover{
+      text-decoration:underline;
+    }
+    &:disabled{
+      color: rgb(220,220,220);
+      text-decoration:none;
+    }
+  }
 `;
 
 export const SearchButtonStyled = styled.button`

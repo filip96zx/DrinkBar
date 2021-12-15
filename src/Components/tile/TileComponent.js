@@ -1,6 +1,7 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef, useContext} from 'react';
 import Tile , {Wrapper}from './Tile.style';
 import FavouriteService from '../../Services/FavouriteService';
+import { FavouriteCountContext } from '../../Context/FavouriteCountContext';
 
 const heart = (className) => {
   return <svg xmlns="http://www.w3.org/2000/svg" className={className} width="24" height="24" viewBox="0 0 24 24"><path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg>
@@ -10,6 +11,7 @@ const TileComponent = ({ drink }) => {
   const { idDrink, strDrinkThumb, strInstructions } = drink;
   const [isLiked, setIsLiked] = useState(false);
   const elementRef = useRef(null);
+  const CountContext = useContext(FavouriteCountContext);
   let ingredients = [];
 
   useEffect(() => {
@@ -31,6 +33,7 @@ const TileComponent = ({ drink }) => {
       FavouriteService.removeFromFavourites(idDrink);
       setIsLiked(false);
     }
+    CountContext.handleCount();
   }
 
   const handleMouseOut = (e) => {
