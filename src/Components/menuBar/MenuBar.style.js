@@ -106,7 +106,7 @@ const MenuBarStyled = styled.div`
       text-decoration:underline;
     }
     &:disabled{
-      color: rgb(220,220,220);
+      color: rgb(170,170,170);
       text-decoration:none;
     }
   }

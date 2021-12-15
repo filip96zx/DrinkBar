@@ -167,10 +167,10 @@ const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) =>
           </div>
         </form>
         {showLikedList ? (
-          <button onClick={likedListHide}>all </button>
+          <button onClick={likedListHide}>All </button>
         ) : (
           <button disabled={CountContext.count < 1} onClick={likedListShow}>
-            favourites ({CountContext.count})
+            Favourites ({CountContext.count})
           </button>
         )}
       </MenuBarStyled>

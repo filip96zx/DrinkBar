@@ -47,6 +47,7 @@ const HomeComponent = ({ drinksIdsList, handleShowMenuButton }) => {
       setDrinksCount(12);
     }
     setWaitingTiles(WaitingTilesList);
+    if(homeRef.current.scrollTop > 0) { homeRef.current.scrollTop = 0;}
   }, [drinksIdsList]);
 
 
