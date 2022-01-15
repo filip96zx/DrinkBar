@@ -1,13 +1,15 @@
 import React, { useState, createContext, useEffect } from 'react';
 import FavouriteService from '../Services/FavouriteService';
 
-export const FavouriteCountContext = createContext();
+export const FavouriteCountContext = createContext({count:0, handleCount: () => { }});
 
 const FavouriteCountContextProvider = ({ children }) => {
   const [ count, setCount ] = useState(0);
 
   useEffect(() => {
-    setCount(FavouriteService.favouriteDrinksList().length);
+    if(FavouriteService.favouriteDrinksList()) {
+      setCount(FavouriteService.favouriteDrinksList().length);
+    }
   }, []);
 
 
