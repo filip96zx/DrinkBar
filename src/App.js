@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from 'react';
-import ContainerStyled from './App.style';
 import HomeComponent from './Components/homeComponents/HomeComponent';
 import MenuBar from './Components/menuBar/MenuBar';
 import BackgroundComponent from './Components/background/BackgroundComponent';
@@ -50,10 +49,10 @@ function App() {
   return (
     <FavouriteCountContextProvider>
       <MenuBar showMenuButton={showMenuButton} showMenu={showMenu} setShowMenu={setShowMenu} setDrinksIdsList={setDrinksIdsList}></MenuBar>
-      <ContainerStyled>
+      <main>
         <BackgroundComponent/>
         <HomeComponent handleShowMenuButton={handleShowMenuButton} drinksIdsList={drinksIdsList}/>
-      </ContainerStyled>
+      </main>
     </FavouriteCountContextProvider>
   );
 }

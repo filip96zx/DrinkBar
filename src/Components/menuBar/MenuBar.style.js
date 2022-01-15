@@ -2,7 +2,7 @@ import styled from "styled-components";
 import typography from "../../Styles/typography";
 
 
-const MenuBarStyled = styled.div`
+const MenuBarStyled = styled.header`
   position: fixed;
   top:0;
   transition:0.8s;
