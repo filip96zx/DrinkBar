@@ -126,6 +126,9 @@ export const SearchButtonStyled = styled.button`
   height: 50px;
   border-radius: 50%;
   z-index:3;
+  &:hover {
+    cursor: pointer;
+  }
   &.show{
     transform: translateY(0%);
   }

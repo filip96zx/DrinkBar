@@ -34,10 +34,6 @@ const MenuIcon = styled.div`
   padding: 0 7px;
   transition: 0.2s;
   -webkit-tap-highlight-color: transparent;
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-  }
   .cross #rect-one {
     animation: ${moveRotate('30px', '45deg')} 0.3s linear forwards;
   }

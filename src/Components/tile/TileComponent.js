@@ -11,6 +11,7 @@ const TileComponent = ({ drink }) => {
   const { idDrink, strDrinkThumb, strInstructions } = drink;
   const [isLiked, setIsLiked] = useState(false);
   const elementRef = useRef(null);
+  const imageRef = useRef(null);
   const CountContext = useContext(FavouriteCountContext);
   let ingredients = [];
 
@@ -40,11 +41,14 @@ const TileComponent = ({ drink }) => {
     elementRef.current.querySelector('.drink-info').scrollTop = 0;
   }
 
+  const handleImageOnLoad = () => {
+    imageRef.current.classList.add('loaded');
+  }
 
   return (
     <Wrapper>
     <Tile onMouseLeave={handleMouseOut} onBlur={handleMouseOut} ref={elementRef}>
-      <img src={strDrinkThumb} loading='lazy' />
+      <img src={strDrinkThumb} onLoad={handleImageOnLoad} ref={imageRef} loading='lazy' alt=''/>
       <div className='shadow-box'></div>
       <div className='info-background'></div>
       <div className='drink-info'>
