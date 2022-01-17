@@ -15,7 +15,7 @@ const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) =>
 
   const [showLikedList, setShowLikedList] = useState(false);
 
-  useEffect(() => {});
+  useEffect(() => { });
 
   useEffect(() => {
     const list = [];
@@ -155,15 +155,19 @@ const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) =>
         <h2>Search</h2>
         <form onSubmit={handleNameSubmit}>
           <div className='form-group'>
-            <label htmlFor='nameInput'>Name&nbsp;</label>
-            <input type='text' id='nameInput' value={nameInput} onChange={handleChangeName} />
+            <div className='input-wrapper'>
+              <label htmlFor='nameInput'>Name&nbsp;</label>
+              <input type='text' id='nameInput' value={nameInput} onChange={handleChangeName} />
+            </div>
           </div>
         </form>
         <form onSubmit={handleIngredientSubmit}>
           <div className='form-group'>
-            <label htmlFor='ingredientInput'>Ingredient&nbsp;</label>
-            <input autoComplete='off' type='text' id='ingredientInput' value={ingredientInput} onChange={handleChangeIngredient} onBlur={() => setHint([])} />
-            <div className='hints'>{hint}</div>
+            <div className='input-wrapper'>
+              <label htmlFor='ingredientInput'>Ingredient&nbsp;</label>
+              <input autoComplete='off' type='text' id='ingredientInput' value={ingredientInput} onChange={handleChangeIngredient} />
+              <div className='hints'>{hint}</div>
+            </div>
           </div>
         </form>
         {showLikedList ? (

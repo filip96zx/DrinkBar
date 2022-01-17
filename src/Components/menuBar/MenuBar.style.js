@@ -39,7 +39,6 @@ const MenuBarStyled = styled.header`
     width: 100%;
     }
     .form-group {
-      position: relative;
       text-align: center;
       @media(max-width:520px){
         text-align: left;
@@ -55,9 +54,14 @@ const MenuBarStyled = styled.header`
       }
     }    
   }
-
+  .input-wrapper{
+    position: relative;
+    width:fit-content;
+    margin:0 auto;
+  }
   input {
     font-size: 1.2rem;
+    width: 13rem;
   }
   .hints{
     position: absolute;
@@ -65,8 +69,8 @@ const MenuBarStyled = styled.header`
     display: flex;
     flex-direction:column;
     max-height: 50vh;
-    overflow: auto;
-    width: 15rem;
+    overflow-x: hidden;
+    overflow-y: auto;
     cursor: pointer;
     &:hover {
       .hint:nth-of-type(1){
@@ -75,10 +79,13 @@ const MenuBarStyled = styled.header`
     }
   }
   .hint {
-    font-size: 1.2rem;
-    border: none; 
-    padding: 2px;
+    font-size: 1rem;
+    min-width: 13em;
+    border: none;
+    height: auto;
+    padding: 2px 0;
     text-align: left;
+    z-index: 5;
     &:nth-of-type(1){
       background: ${typography.secondaryColor};
     }
