@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/DrinkBar/static/css/main.349fcf73.css",
-    "main.js": "/DrinkBar/static/js/main.eb50d38d.js",
+    "main.js": "/DrinkBar/static/js/main.0dbab4e7.js",
     "static/media/background6kx8k.jpg": "/DrinkBar/static/media/background6kx8k.cf3c0661298494970957.jpg",
     "static/media/background3kx4k.jpg": "/DrinkBar/static/media/background3kx4k.a63d0e3c05b517b1aeb8.jpg",
     "static/media/background1,5kx2k.jpg": "/DrinkBar/static/media/background1,5kx2k.96b137daddc03e4fa4e4.jpg",
     "static/media/background0.7x1k.jpg": "/DrinkBar/static/media/background0.7x1k.34d9124f13a4edf444c1.jpg",
     "index.html": "/DrinkBar/index.html",
     "main.349fcf73.css.map": "/DrinkBar/static/css/main.349fcf73.css.map",
-    "main.eb50d38d.js.map": "/DrinkBar/static/js/main.eb50d38d.js.map"
+    "main.0dbab4e7.js.map": "/DrinkBar/static/js/main.0dbab4e7.js.map"
   },
   "entrypoints": [
     "static/css/main.349fcf73.css",
-    "static/js/main.eb50d38d.js"
+    "static/js/main.0dbab4e7.js"
   ]
 }
