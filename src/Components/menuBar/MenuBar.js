@@ -15,7 +15,11 @@ const MenuBar = ({ setDrinksIdsList, showMenuButton, showMenu, setShowMenu }) =>
 
   const [showLikedList, setShowLikedList] = useState(false);
 
-  useEffect(() => { });
+  useEffect(() => {
+    if(!showMenu){
+      setHint([]);
+    }
+   },[showMenu]);
 
   useEffect(() => {
     const list = [];
